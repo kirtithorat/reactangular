@@ -1,0 +1,22 @@
+{
+  "name": "reactangular",
+  "version": "1.0.0",
+  "description": "Reactangular is a learning project using React+Angular+D3.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kirtithorat/reactangular.git"
+  },
+  "author": "Kirti Thorat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirtithorat/reactangular/issues"
+  },
+  "homepage": "https://github.com/kirtithorat/reactangular",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
