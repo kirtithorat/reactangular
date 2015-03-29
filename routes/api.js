@@ -14,7 +14,8 @@ router.route('/api')
             response.send(err); 
           }
           else {
-            response.sendFile(path.join(__dirname, '../public/index.html')); 
+            response.send(data);
+            //response.sendFile(path.join(__dirname, '../public/index.html')); 
           }
         });
 

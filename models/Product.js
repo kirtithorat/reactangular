@@ -17,15 +17,7 @@ var productSchema = new mongoose.Schema({
 		type: Number,
 		required: true
 	},
-	view_count: Number,
-	created_at: {
-		type: Date,
-		default: Date.now
-	},
-	updated_at: {
-		type: Date,
-		default: Date.now
-	}
+	view_count: Number
 });
 
 var Product = mongoose.model('Product', productSchema);
