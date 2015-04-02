@@ -3,12 +3,16 @@
 	<head>
 		<title>Reactangular</title>
 		<meta charset="utf-8">
+		<link href="/app/css/style.css">
 	</head>
 	<body>
 		<h1> Reactangular </h1>
-		{{ "Hello Reactangular!" }}
+		<div ng-controller="AppCtrl">
+			{{productsData}}
+		</div>
 
 		 <script src="/bower_components/angular/angular.min.js"></script>
+		  <script src="/bower_components/angular-route/angular-route.min.js"></script>
 
 		 <script src="./app/js/app.js"></script>
 	</body>

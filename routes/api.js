@@ -6,7 +6,7 @@ var path = require('path');
 
 router.route('/api')
     .get(function(request, response) {
-        console.log("Making API Request");
+        console.log("Route Request");
 
         // API Request to fetch JSON data using Basic Auth
         util.makeAPICall(function (err, data) {
