@@ -109,7 +109,6 @@ var getInsertBatchProducts = function (numOfCalls, options, callback) {
                             callback(JSON.parse(chunk), null);
                         } else {
                             dbhelper.processData(chunk, function (err, data) {
-                                console.log("getBatchProducts: pageCount: processData:"+pageCount);
                                 if (err) {
                                   callback(err);
                                 } else {

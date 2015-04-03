@@ -11,9 +11,9 @@ module.exports.makeAPICall = function(callback) {
 
     /* 
         Decide whether or not to make API call
-        If Today's date - lastUpdated >= 6 months(180 days) 
-        then fetch latest data via API request
-        else fetch data from db 
+        If Data was already fetched from API, i.e., lastUpdatedOn is set in StaticData collection 
+        then fetch data from db
+        else fetch data via API request (this is only run ONCE)
     */
     console.log("Util: makeAPICall");
     mongoose.connect(secret.mongodb.url);

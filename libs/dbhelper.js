@@ -67,15 +67,10 @@ var checkLastUpdated = function (callback) {
 			callback(err, null);	
 		} else {
 			if(doc && doc.dataValue) {
-				var lastUpdatedOn = doc.dataValue;
-				var nextUpdateDate = addDays(lastUpdatedOn, -1);
-				var todaysDate = new Date();
-				console.log("Todays Date:"+todaysDate+"  nextUpdateDate: "+nextUpdateDate+"  lastUpdatedOn:"+lastUpdatedOn);
-				if (todaysDate < nextUpdateDate) {
-					callback(null, false);
-				} else {
-					callback(null, true);
-				}
+				// var lastUpdatedOn = doc.dataValue;
+				// var nextUpdateDate = addDays(lastUpdatedOn, 180);
+				// var todaysDate = new Date();
+				callback(null, false);
 			} else {
 				callback(null, true);
 			}
