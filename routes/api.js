@@ -4,7 +4,7 @@ var router = express.Router();
 var util = require('../libs/util');
 var path = require('path');
 
-router.route('/api')
+router.route('/api/products.json')
     .get(function(request, response) {
         console.log("Route Request");
 

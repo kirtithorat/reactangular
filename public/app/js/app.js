@@ -1,23 +1,17 @@
-angular.module("reactangularApp", [])
-.controller('AppCtrl', [ '$scope', '$http', function AppCtrl($scope, $http) {
+angular.module("reactangularApp", ['ngResource'])
+.controller('AppCtrl', [ '$scope', 'ProductsFactory', function AppCtrl($scope, ProductsFactory) {
 	$scope.getProductsData = function () {
-		$http({
-			method: 'GET',
-			url: '/api'
-		}).
-		success(function (data) {
-			$scope.productsData = data;
-			// clear the error messages
-      		$scope.error = '';
-		}).
-		error(function (err, status) {
-			if (status === 404) {
-		      $scope.error = 'No Products';
-		    } else {
-		      $scope.error = 'Error: ' + status;
-		    }
+		ProductsFactory.query(function (products) {
+			$scope.productsData = products;
 		});
 	};
-
-	$scope.getProductsData();
+}])
+.directive('productsData', [function () {
+	return {
+		restrict: 'E',
+		templateUrl: '/app/partials/products-data.html'
+	};
+}])
+.factory('ProductsFactory', ['$resource', function ($resource) {
+	return $resource('/api/products.json');
 }]);

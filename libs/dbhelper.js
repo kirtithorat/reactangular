@@ -44,7 +44,7 @@ var updateStaticData = function (callback) {
 
 var getProductData = function (callback) {
 	console.log("DBHelper: getProductData");
-	Product.find({}).sort({'total_sold': 'desc'}).limit(5).exec(function(err, docs) {
+	Product.find({}).exec(function(err, docs) {
 		if(err){
 			callback(err, null);	
 		} else {

@@ -1,0 +1,22 @@
+<div ng-show=productsData.length>
+	<table border="1">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>SKU</th>
+			<th>Name</th>
+			<th>Units Sold</th>
+			<th>View Count</th>
+		</tr>
+	</thead>
+	<tbody>	
+		<tr ng-repeat="product in productsData">
+			<td>{{product.id}}</td> 
+			<td>{{product.sku}}</td> 
+			<td>{{product.name}}</td> 
+			<td>{{product.total_sold}}</td>
+			<td>{{product.view_count}}</td>
+		</tr>
+	</tbody>
+	</table>
+</div>
