@@ -1,4 +1,4 @@
-<div ng-show=productsData.length>
+<div ng-show=products.length>
 	<table border="1">
 	<thead>
 		<tr>
@@ -10,7 +10,7 @@
 		</tr>
 	</thead>
 	<tbody>	
-		<tr ng-repeat="product in productsData">
+		<tr ng-repeat="product in products">
 			<td>{{product.id}}</td> 
 			<td>{{product.sku}}</td> 
 			<td>{{product.name}}</td> 
