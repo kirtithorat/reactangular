@@ -10,9 +10,11 @@
 		<div ng-controller="AppCtrl">
 			<button ng-click=getProducts()>Get Products</button>
 			<button ng-click=clearProducts()>Clear Products</button>
+			<button ng-click=countWatchers()>Count Watchers</button>
 			<button ng-click=renderAngular()>Angular 1.3</button>
 			<button ng-click=renderAngularReact()>Angular 1.3 + React</button><br/> <br />
 			<p>Timer: {{timer}}</p>
+			<p>Watchers Count: {{watchersCount}}</p>
 			<p>{{message}}</p>
 
 			<div ng-if=showAngular>
