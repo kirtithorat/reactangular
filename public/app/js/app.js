@@ -17,6 +17,7 @@ angular.module("reactangularApp", ['ngResource'])
 	$scope.renderAngularReact = function () {
 		$scope.showAngular = false;
 		$scope.showAngularReact = true;
+		renderingTime();
 	};
 	$scope.clearProducts = function () {
 		$scope.products = {};
@@ -68,15 +69,29 @@ angular.module("reactangularApp", ['ngResource'])
         $timeout(function () {
             var time = (new Date().getTime() - startTime) + " ms";
             $scope.setTimer(time);
+            $scope.countWatchers();
         });
     };
 
     $scope.clearProducts();
 }])
-.directive('productsData', [function () {
+.directive('angularProductsData', [function () {
 	return {
 		restrict: 'E',
 		templateUrl: '/app/partials/products-data.html'
+	};
+}])
+.directive('reactProductsData', [function () {
+	return {
+		restrict: 'E',
+		scope: {
+			products: "="
+		},
+		link: function (scope, element, attrs) {			
+			scope.$parent.$watch('products', function (newValue, oldValue) {
+				React.render(React.createElement(ProductsTableComponent, {products: newValue}), element[0]);
+			});
+		}
 	};
 }])
 .factory('ProductsFactory', ['$resource', function ($resource) {
